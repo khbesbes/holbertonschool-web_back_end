@@ -1,0 +1,1 @@
+<h5>ES6 classes</h5>
