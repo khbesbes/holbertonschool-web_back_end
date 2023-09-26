@@ -1,11 +1,11 @@
-export default class Buildings{
+export default class Building{
     constructor(sqft){
-        if(this.constructor !==Buildings && this.evacuationWarningMessage !== 'undefined')throw new console.error("extending Building must override evacuationWarningMessage");
-        this._sqft =sqft;
-    }
+        if (this.constructor !== Building && typeof this.evacuationWarningMessage === 'undefined')throw new Error('extending Building must override evacuationWarningMessage');
+        this._sqft = sqft;
+    }   
     /*getter of sqft */
     get sqft(){
-        return this._sqft = sqft;
+        return this._sqft;
     }
     /*setter of sqft*/
     set sqft(value){
