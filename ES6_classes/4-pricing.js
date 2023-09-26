@@ -1,30 +1,36 @@
-import Currency from './3-currency.js';
-export default class Pricing{
-    constructor(amout, currency){
-        if(typeof amout !=='Number') throw TypeError ('Amout must be number');
-        if(typeof currency!=='currency') throw TypeError('Currency must be curreny');
+export default class Pricing {
+    constructor(amount, currency) {
+      this._amount = amount;
+      this._currency = currency;
     }
-    get amout(){
-        this.amout = amout;
+  
+    /* getter amount */
+    get amount() {
+      return this._amount;
     }
-    set amout(value){
-        if(amout !== 'Number') throw TypeError('amout must be number ');
-        return this.amout = value;
+  
+    /* setter amount */
+    set amount(value) {
+      this._amount = value;
     }
-    get currency(){
-        this.currency = this.currency;
+  
+    /* getter currency */
+    get currency() {
+      return this._currency;
     }
-    set currency(value){
-        if(currency !=='currency') throw TypeError('currency must be currency');
-        return this.currency =  value ;
+  
+    /* setter currency */
+    set currency(value) {
+      this._currency = value;
     }
-    
-    displayFullprice() {
-        return `${this._amout} (${this._currency})`;
+  
+    displayFullPrice() {
+      const currencyAll = this._currency.displayFullCurrency();
+      return `${this._amount} ${currencyAll}`;
     }
-     static convertPrice(amount,conversionRate) {
-       return amount * conversionRate;
+  
+    static convertPrice(amount, conversionRate) {
+      return amount * conversionRate;
     }
-
-}
- 
+  }
+  
