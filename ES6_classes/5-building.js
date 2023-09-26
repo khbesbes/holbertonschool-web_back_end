@@ -9,7 +9,7 @@ export default class Buildings{
     }
     /*setter of sqft*/
     set sqft(value){
-        if(typeof sqft!== "Number") throw TypeError("sqft must be number");
+        this._sqft = value;
     }
 
 }
