@@ -1,3 +1,7 @@
-function getResponseFromAPI(result) {
-    console.Log(true);
+function getResponseFromAPI(resolve, reject){
+    let connect = true;
+    if (connect){
+        resolve(true);
+    } else 
+        reject();
 }
